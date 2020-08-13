@@ -50,7 +50,7 @@ def flowChart():
 
 # welcome info            
 def welcome():
-        print("Welcome to 'how to argue with your wife' boot camp!!!\nPlease look carefully and answer the following questions with 'yes' or 'no'")
+        print("Welcome to 'how to win an arguement with your wife' boot camp!!!\nPlease look carefully and answer the following questions with 'yes' or 'no'")
         x = input("Do you want to continue? ")
         quit(x)
         check(x, "Do you want to continue? ")
