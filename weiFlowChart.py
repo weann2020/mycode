@@ -48,9 +48,21 @@ def flowChart():
             fix()
             print("Anyway...she's right...you lose...")
 
+# welcome info            
+def welcome():
+        print("Welcome to 'how to argue with your wife' boot camp!!!\nPlease look carefully and answer the following questions with 'yes' or 'no'")
+        x = input("Do you want to continue? ")
+        quit(x)
+        check(x, "Do you want to continue? ")
+        if x.lower().strip() == "yes":
+            print("Let's begin....")
+        elif x.lower().strip() == "no":
+            print("Ok, goodbye!")
+            exit()
+
 def main():
+    welcome()
     questions=["Waiting a minute...are you married?", "Is your wife around this computer screen? "] 
-    print("Welcome to 'how to argue with your wife' boot camp!!!\nPlease look carefully and answer the following questions with 'yes' or 'no'")
     while "there are 24 hours in a day":
         answer1=input(questions[0])
         quit(answer1)
