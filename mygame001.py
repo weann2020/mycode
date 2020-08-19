@@ -13,17 +13,17 @@ Commands:
   do [action]
 ''')
 
-def showStatus():
+#def showStatus():
   #print the player's current status
-  print('---------------------------')
-  print('You are in the ' + currentRoom)
+#  print('---------------------------')
+#  print('You are in the ' + currentRoom)
 #  print(str(room[currentRoom]['description']))
   #print the current inventory
-  print('Inventory : ' + str(inventory))
+#  print('Inventory : ' + str(inventory))
   #print an item if there is one
-  if "item" in rooms[currentRoom]:     
-    print('You see a ' + rooms[currentRoom]['item'])
-  print("---------------------------")
+#  if "item" in rooms[currentRoom]:     
+#    print('You see a ' + rooms[currentRoom]['item'])
+#  print("---------------------------")
 
 #an inventory, which is initially empty
 inventory = []
@@ -80,6 +80,18 @@ rooms = {
                 }
 
          }
+
+def showStatus():
+  #print the player's current status
+  print('---------------------------')
+  print('You are in the ' + currentRoom)
+  print(str(rooms[currentRoom]['description']))
+  #print the current inventory
+  print('Inventory : ' + str(inventory))
+  #print an item if there is one
+  if "item" in rooms[currentRoom]:
+    print('You see a ' + rooms[currentRoom]['item'])
+  print("---------------------------")
 
 #start the player in the Hall
 currentRoom = 'Hall'
@@ -142,6 +154,10 @@ while True:
 #  if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
 #      print('A monster has got you... GAME OVER!')
 #      break
+  if currentRoom == 'Master Bed Room':
+      if 'jump' in actions:
+          currentRoom == 'Gargen'
+          print("You just jumped into the Garden!")
   if currentRoom == 'Kitchen':
       if 'gun' in inventory:
           print("Monster has been killed...You are safe now!")
@@ -162,6 +178,6 @@ while True:
           print("You either didn't get all the required items or you forgot to take a shower after the gas chamber...GAME OVER!")
           break
   if currentRoom == 'Master Bed Room':
-      if 'jump' in actions:
-          currentRoom == 'Gargen'
-          print("You just jumped into the Garden!")
+            if 'jump' in actions:
+              currentRoom == 'Gargen'
+              print("You just jumped into the Garden!")
