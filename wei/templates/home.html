@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Hello World!</h1>
+    <p class="lead" style="font-size:30px">Welcome to NASA Astronomy Picture of the Day!</p>
+
+    <form class="form-inline my-2 my-lg-0" method="POST" action="">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="text" name="date"  placeholder="Enter date in format of  YYYY-MM-DD" size="40" aria-label="Search">
+      <button class="btn btn-primary" type="submit" name="system">Submit</button>
+    </form>
+
+  </div>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 24rem;">
+          <img class="card-img-top" src="{{api.hdurl}}" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{api.title}}</h5>
+              <p class="card-text">{{api.date}}</p>
+              <a href={{api.hdurl}} class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+          <br>
+       </div>
+     </div>
+    </div>
+
+{% endblock %}
